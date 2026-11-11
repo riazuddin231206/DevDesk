@@ -3,7 +3,7 @@ import { NavLink, Link } from "react-router";
 const Navbar = () => {
     return (
         <nav className="w-full bg-[#0b0f17] border-b border-gray-800/60 py-3.5 px-6">
-            <div className="max-w-7xl mx-auto flex items-center justify-between">
+            <div className="w-7/10 max-w-7xl mx-auto flex items-center justify-between">
 
                 {/* Left: Brand / Logo */}
                 <div className="flex items-center gap-2">
@@ -30,7 +30,7 @@ const Navbar = () => {
                     </NavLink>
 
                     <NavLink
-                        to="/gear-guide"
+                        to="/gearguide"
                         className="text-gray-300 text-sm font-medium transition-colors duration-200 [&.active]:text-emerald-400 [&.active]:font-semibold hover:text-white"
                     >
                         Gear Guide
