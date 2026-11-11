@@ -3,7 +3,7 @@ import { Link } from "react-router";
 const HeroSection = () => {
     return (
         <div className="w-full bg-[#0b0f17] text-white py-20 px-6">
-            <div className="max-w-5xl mx-auto">
+            <div className="w-9/12 mx-auto">
               
                 <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight leading-tight mb-6">
                     Inspiring Workspaces Built by <span className="text-white">Developers</span>
