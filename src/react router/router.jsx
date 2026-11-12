@@ -4,7 +4,6 @@ import Home from '../pages/Home';
 import Setups from '../pages/Setups';
 import GearGuide from '../pages/GearGuide';
 import Guidelines from '../pages/Guidelines';
-import Submit from '../pages/Submit';
 import CardDetails from '../pages/CardDetails';
 
 const router = createBrowserRouter([
@@ -29,13 +28,10 @@ const router = createBrowserRouter([
             element: <Guidelines />,
         },
         {
-            path: "/submit",
-            element: <Submit />,
-        },
-        {
             path: "/carddetails/:id",
             element: <CardDetails />,
         }
+        
     ]
   },
 ]);
