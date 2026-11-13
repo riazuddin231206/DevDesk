@@ -1,4 +1,4 @@
-import { Link } from "react-router";
+import { Link, NavLink } from "react-router";
 
 const TopRatedSection = () => {
     const Cards = [
@@ -38,7 +38,7 @@ const TopRatedSection = () => {
     ]
     return (
         <section className="w-full bg-[#0b0f17] text-white py-12 px-6">
-            <div className="max-w-6xl mx-auto">
+            <div className="w-9/12 mx-auto">
 
                 {/* Header Section */}
                 <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-8 gap-4">
@@ -85,12 +85,14 @@ const TopRatedSection = () => {
                         Cards.map((card) => (
                             <div className="bg-[#111827] rounded-xl overflow-hidden border border-gray-800/80 hover:border-gray-700 transition duration-300 flex flex-col group">
                                 <div className="relative aspect-[16/10] overflow-hidden bg-gray-900">
-                                    <img
-                                    to={`/carddetails/${card.id}`}
-                                        src={card.image}
-                                        alt={card.title}
-                                        className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
-                                    />
+                                    <NavLink to={`/carddetails/${card.id}`}>
+                                        <img
+                                           
+                                            src={card.image}
+                                            alt={card.title}
+                                            className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+                                        />
+                                    </NavLink>
                                     <div className="absolute top-3 right-3 bg-gray-950/80 backdrop-blur-md text-gray-200 px-2.5 py-1 rounded-md border border-gray-700/60 text-xs font-semibold flex items-center gap-1">
                                         <span className="text-emerald-400">↑</span>
                                         <span>{card.upvotes.toLocaleString()}</span>

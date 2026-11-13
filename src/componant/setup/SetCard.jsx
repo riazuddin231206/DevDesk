@@ -1,4 +1,4 @@
-import { Link } from "react-router";
+import { Link, } from "react-router";
 
 const SetCards = () => {
     const Cards = [
@@ -72,7 +72,7 @@ const SetCards = () => {
     return (
         <section className="w-full bg-[#0b0f17] text-white py-12 px-6">
             <div className="w-9/12 mx-auto">
-                
+
                 {/* Static Grid */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
@@ -80,12 +80,14 @@ const SetCards = () => {
                         Cards.map((card) => (
                             <div className="bg-[#111827] rounded-xl overflow-hidden border border-gray-800/80 hover:border-gray-700 transition duration-300 flex flex-col group">
                                 <div className="relative aspect-[16/10] overflow-hidden bg-gray-900">
-                                    <img
-                                        to={`/carddetails/${card.id}`}
-                                        src={card.image}
-                                        alt={card.title}
-                                        className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
-                                    />
+                                    <Link to={`/carddetails/${card.id}`}>
+                                        <img
+
+                                            src={card.image}
+                                            alt={card.title}
+                                            className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+                                        />
+                                    </Link>
                                     <div className="absolute top-3 right-3 bg-gray-950/80 backdrop-blur-md text-gray-200 px-2.5 py-1 rounded-md border border-gray-700/60 text-xs font-semibold flex items-center gap-1">
                                         <span className="text-emerald-400">↑</span>
                                         <span>{card.upvotes.toLocaleString()}</span>

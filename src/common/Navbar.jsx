@@ -2,7 +2,7 @@ import { NavLink, Link } from "react-router";
 
 const Navbar = () => {
     return (
-        <nav className="w-full bg-[#0b0f17] border-b border-gray-800/60 py-3.5 px-6">
+        <nav className="fixed top-0 left-0 right-0 z-50 h-18 w-full bg-[#0b0f17] border-b border-gray-800/60 py-3.5 px-6">
             <div className="w-9/12 max-w-7xl mx-auto flex items-center justify-between">
 
                 {/* Left: Brand / Logo */}

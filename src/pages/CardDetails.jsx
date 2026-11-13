@@ -15,14 +15,14 @@ const CardDetails = () => {
     const singleView = ViewsCard.find((view) => view.id = id)
     return (
         <div>
-            <div className="min-h-screen bg-base-300 text-base-content px-4 md:px-8 py-6">
+            <div className="pt-25 min-h-screen bg-base-300 text-base-content px-4 md:px-8 py-6 ">
                 <div className="max-w-6xl mx-auto space-y-8">
 
                     {/* Back Link */}
                     <div>
                         <Link to="/setups" className="btn btn-ghost btn-sm gap-2 text-base-content/70 hover:text-base-content">
 
-                            Back to Setups
+                            <span className="text-xl pb-1">←</span> Back to Setups
                         </Link>
                     </div>
 
@@ -48,8 +48,8 @@ const CardDetails = () => {
                                     <div
                                         key={idx}
                                         // onClick={() => setActiveImage(img)}
-                                        // className={`card bg-base-100 cursor-pointer overflow-hidden aspect-video border-2 transition-all ${activeImage === img ? 'border-success shadow-md scale-[1.02]' : 'border-base-300 opacity-70 hover:opacity-100'
-                                        //     }`}
+                                        className={`card bg-base-100 cursor-pointer overflow-hidden aspect-video border-2 transition-all    'border-success shadow-md scale-[1.02]' : 'border-base-300 opacity-70 hover:opacity-100'
+                                            }`}
                                     >
                                         <figure className="w-full h-full m-0">
                                             <img src={img} alt={`Thumbnail ${idx + 1}`} className="w-full h-full object-cover" />
@@ -92,8 +92,9 @@ const CardDetails = () => {
                                     </div>
 
                                     <div className="flex items-center gap-2">
-                                        <button className="btn btn-sm btn-success gap-1.5 text-success-content">
-                                            <span className="w-4 h-4 fill-current" />
+                                        <button className="btn btn-sm btn-success gap-1.5 text-white ">
+                                            <span className="text-lg">↑</span>
+                                            <span className="w-4 h-4 fill-current" /> 
                                             <span>{singleView.upvotes}</span>
                                         </button>
                                         <button className="btn btn-sm btn-ghost btn-square">
