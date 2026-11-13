@@ -4,7 +4,7 @@ const HeroSection = () => {
     return (
         <div className="w-full bg-[#0b0f17] text-white mt-13 py-20 px-6 border-b border-base-200">
             <div className="w-9/12 mx-auto">
-              
+                
                 <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight leading-tight mb-6">
                     Inspiring Workspaces Built by <span className="text-white">Developers</span>
                 </h1>
