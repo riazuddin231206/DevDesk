@@ -1,154 +1,179 @@
-import { Link, useParams } from "react-router";
+
+import { Link, NavLink, useParams } from "react-router";
 import ViewsCard from "../componant/home/ViewsCard";
-// import { useState } from "react";
 
 const CardDetails = () => {
 
     const { id } = useParams();
-    
 
-    const handleCopyJson = () => {
-        const jsonString = JSON.stringify(singleView.specs.items, null, 2);
-        navigator.clipboard.writeText(jsonString);
-    };
+    // Find single card by ID
+    const singleView = ViewsCard.find((view) => view.id === id);
 
-    const singleView = ViewsCard.find((view) => view.id = id)
+    // If data not found
+    if (!singleView) {
+        return (
+            <div className="min-h-screen bg-[#0b0f17] text-white flex items-center justify-center">
+                <h1 className="text-3xl font-bold">No Data Found!</h1>
+            </div>
+        );
+    }
+
     return (
-        <div>
-            <div className="pt-25 min-h-screen bg-base-300 text-base-content px-4 md:px-8 py-6 ">
-                <div className="max-w-6xl mx-auto space-y-8">
+        <div className="bg-[#0b0f17] text-white px-4 mt-13 py-20 grid gap-10">
+            <div className="w-11/12 mx-auto lg:w-9/12">
+                <NavLink
+                    to={`/setups`}
+                >
+                    <h1>
+                        ← Back to Setups
+                    </h1>
+                </NavLink>
+            </div>
 
-                    {/* Back Link */}
+            {/* Photos and Info */}
+            <div className="w-11/12 mx-auto flex flex-col lg:flex-row gap-5 border-b pb-10 border-base-300  lg:w-9/12">
+
+                {/* Photos */}
+                <div className="w-full lg:w-7/12">
+
+                    {/* Big Photo */}
                     <div>
-                        <Link to="/setups" className="btn btn-ghost btn-sm gap-2 text-base-content/70 hover:text-base-content">
-
-                            <span className="text-xl pb-1">←</span> Back to Setups
-                        </Link>
+                        <img
+                            className="w-full border rounded-md"
+                            src={singleView.images[0]}
+                            alt={singleView.title}
+                        />
                     </div>
 
-                    {/* Main Content Grid */}
-                    <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                    {/* Bottom Photos */}
+                    <div className="grid grid-cols-3 gap-2 pt-2">
 
-                        {/* Left Column: Image Preview & Thumbnails */}
-                        <div className="lg:col-span-7 space-y-4">
-                            {/* Main Image Showcase */}
-                            <div className="card bg-base-100 shadow-xl border border-base-200 overflow-hidden aspect-video relative">
-                                <figure className="w-full h-full m-0">
-                                    <img
-                                        src={singleView.images[0]}
-                                        alt={singleView.title}
-                                        className="w-full h-full object-cover transition-all duration-300"
-                                    />
-                                </figure>
-                            </div>
+                        {singleView.images.map((image, index) => (
+                            <Link key={index} to="#">
+                                <img
+                                    className="w-full h-28 object-cover border rounded-md"
+                                    src={image}
+                                    alt={`${singleView.title} ${index + 1}`}
+                                />
+                            </Link>
+                        ))}
 
-                            {/* Thumbnails Gallery */}
-                            <div className="grid grid-cols-3 gap-3">
-                                {singleView.images.map((img, idx) => (
-                                    <div
-                                        key={idx}
-                                        // onClick={() => setActiveImage(img)}
-                                        className={`card bg-base-100 cursor-pointer overflow-hidden aspect-video border-2 transition-all    'border-success shadow-md scale-[1.02]' : 'border-base-300 opacity-70 hover:opacity-100'
-                                            }`}
-                                    >
-                                        <figure className="w-full h-full m-0">
-                                            <img src={img} alt={`Thumbnail ${idx + 1}`} className="w-full h-full object-cover" />
-                                        </figure>
-                                    </div>
-                                ))}
-                            </div>
+                    </div>
+                </div>
+
+                {/* Info */}
+                <div className="w-full lg:w-5/12 grid gap-5">
+
+                    {/* Categories */}
+                    <ul className="flex gap-3 flex-wrap">
+                        {singleView.categories.map((category, index) => (
+                            <li
+                                key={index}
+                                className="px-3 py-1 text-sm rounded-full bg-white/10"
+                            >
+                                {category}
+                            </li>
+                        ))}
+                    </ul>
+
+                    {/* Title */}
+                    <h1 className="text-3xl font-bold">
+                        {singleView.title}
+                    </h1>
+
+                    {/* User */}
+                    <div className="flex flex-wrap items-center gap-4">
+
+                        {/* Avatar */}
+                        <div className="w-12 h-12 rounded-full bg-emerald-500 flex items-center justify-center text-xl font-semibold">
+                            {singleView.author.name}
                         </div>
 
-                        {/* Right Column: Title, Author & Specs */}
-                        <div className="lg:col-span-5 space-y-6">
+                        {/* User Name and Address */}
+                        <div className="flex-1">
+                            <h1 className="font-semibold">
+                                {singleView.author.username}
+                            </h1>
 
-                            {/* Categories & Title */}
-                            <div className="space-y-3">
-                                <div className="flex flex-wrap gap-2">
-                                    {singleView.categories.map((cat, idx) => (
-                                        <span key={idx} className="badge badge-success badge-outline font-medium text-xs">
-                                            {cat}
-                                        </span>
+                            <p className="text-sm text-gray-400">
+                                {singleView.author.role} · {singleView.author.location}
+                            </p>
+                        </div>
+
+                        {/* Votes */}
+                        <h1 className="font-bold">
+                            {singleView.upvotes.toLocaleString()}
+                        </h1>
+
+                        {/* Save Icon */}
+                        <div>
+                            <i class="fa-solid fa-bookmark"></i>
+                        </div>
+
+                    </div>
+
+                    {/* JSON Details */}
+                    <div>
+                        <h1 className="font-bold text-lg mb-3">
+                            {singleView.specs.fileName}
+                        </h1>
+
+                        <div className="overflow-x-auto">
+                            <table className="table text-white">
+                                <tbody>
+
+                                    {singleView.specs.items.map((item, index) => (
+                                        <tr key={index}>
+                                            <td className="text-gray-400">
+                                                {item.label}
+                                            </td>
+
+                                            <th className="text-right">
+                                                {item.value}
+                                            </th>
+                                        </tr>
                                     ))}
-                                </div>
-                                <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight">
-                                    {singleView.title}
-                                </h1>
-                            </div>
 
-                            {/* Author Profile Card (DaisyUI style) */}
-                            <div className="card bg-base-100 shadow-md border border-base-200 p-4">
-                                <div className="flex items-center justify-between">
-                                    <div className="flex items-center gap-3">
-                                        <div className="avatar placeholder">
-                                            <div className="bg-success text-success-content w-12 rounded-lg font-bold">
-                                                <span>{singleView.author.name}</span>
-                                            </div>
-                                        </div>
-                                        <div>
-                                            <div className="font-bold text-base">{singleView.author.username}</div>
-                                            <div className="text-xs opacity-60">{singleView.author.role} · {singleView.author.location}</div>
-                                        </div>
-                                    </div>
-
-                                    <div className="flex items-center gap-2">
-                                        <button className="btn btn-sm btn-success gap-1.5 text-white ">
-                                            <span className="text-lg">↑</span>
-                                            <span className="w-4 h-4 fill-current" /> 
-                                            <span>{singleView.upvotes}</span>
-                                        </button>
-                                        <button className="btn btn-sm btn-ghost btn-square">
-                                            <span className="w-4 h-4" />
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-
-                            {/* Specs Box with DaisyUI Card / Mockup */}
-                            <div className="card bg-base-100 shadow-md border border-base-200 overflow-hidden">
-                                <div className="bg-base-200 px-4 py-3 border-b border-base-300 font-mono text-xs flex justify-between items-center opacity-80">
-                                    <span>{singleView.specs.fileName}</span>
-                                    <button
-                                        onClick={handleCopyJson}
-                                        className="btn btn-ghost btn-xs gap-1 normal-case font-sans"
-                                        title="Copy specs"
-                                    >
-                                        {/* {copied ? <Check className="w-3.5 h-3.5 text-success" /> : <Copy className="w-3.5 h-3.5" />}
-                                        {copied ? 'Copied' : 'Copy'} */}
-                                    </button>
-                                </div>
-
-                                <div className="card-body p-0 divide-y divide-base-200 text-sm">
-                                    {singleView.specs.items.map((item, idx) => (
-                                        <div key={idx} className="grid grid-cols-3 px-5 py-3">
-                                            <span className="opacity-60">{item.label}</span>
-                                            <span className="col-span-2 font-semibold">{item.value}</span>
-                                        </div>
-                                    ))}
-                                </div>
-
-                                <div className="px-5 py-3 bg-base-200/50 border-t border-base-200 flex flex-wrap gap-2">
-                                    {singleView.specs.tags.map((tag, idx) => (
-                                        <span key={idx} className="badge badge-sm badge-neutral">{tag}</span>
-                                    ))}
-                                </div>
-                            </div>
-
+                                </tbody>
+                            </table>
                         </div>
                     </div>
 
-                    {/* About this setup section */}
-                    <div className="card bg-base-100 shadow-md border border-base-200 p-6 md:p-8 max-w-4xl space-y-4">
-                        <h2 className="text-2xl font-bold tracking-tight">About this setup</h2>
-                        <div className="space-y-4 opacity-90 leading-relaxed text-base">
-                            {singleView.about.map((paragraph, idx) => (
-                                <p key={idx}>{paragraph}</p>
+                    {/* Tags */}
+                    <div>
+                        <ul className="flex gap-2 flex-wrap">
+                            {singleView.specs.tags.map((tag, index) => (
+                                <li
+                                    key={index}
+                                    className="px-3 py-1 rounded-md bg-white/10 text-sm"
+                                >
+                                    {tag}
+                                </li>
                             ))}
-                        </div>
+                        </ul>
                     </div>
 
                 </div>
             </div>
+
+            {/* About */}
+            <div className="grid gap-4 w-11/12 mx-auto lg:w-9/12">
+
+                <h1 className="text-2xl font-bold">
+                    About this setup
+                </h1>
+
+                {singleView.about.map((paragraph, index) => (
+                    <p
+                        key={index}
+                        className="text-gray-400 leading-7"
+                    >
+                        {paragraph}
+                    </p>
+                ))}
+
+            </div>
+
         </div>
     );
 };

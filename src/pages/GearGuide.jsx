@@ -7,7 +7,7 @@ import Navigation from "../componant/gear/Navigation";
 const GearGuide = () => {
     return (
         <div className="bg-[#0b0f17] pt-25 min-h-screen text-base-content px-4 md:px-8 py-6">
-            <div className="w-9/12 mx-auto space-y-12">
+            <div className="w-11/12 mx-auto space-y-12 lg:w-9/12">
 
                 {/* Header start */}
                 <Header />

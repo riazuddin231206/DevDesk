@@ -1,7 +1,7 @@
 export function CommunityWorkspaces() {
   return (
     <div className="bg-[#0b0f17] mt-16 border-b border-base-200">
-      <section className="p-12 px-6 w-9/12 mx-auto">
+      <section className="p-12 px-6 w-11/12 mx-auto lg:w-9/12">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
           <div>
             <div className="flex gap-3 align-center">

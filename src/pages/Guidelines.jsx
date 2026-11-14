@@ -1,7 +1,7 @@
 const Guidelines = () => {
     return (
         <div className="bg-[#0b0f17] pt-25 min-h-screen text-base-content px-4 mt-13 py-20  md:px-8 py-6">
-            <div className="max-w-6xl mx-auto space-y-12">
+            <div className="w-11/12 mx-auto space-y-12 lg:w-9/12">
 
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
 

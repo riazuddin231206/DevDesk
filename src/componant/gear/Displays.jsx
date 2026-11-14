@@ -9,7 +9,7 @@ const Displays = () => {
                     </p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                     <div className="card bg-base-100 shadow-md border border-base-200 p-6 flex flex-col justify-between">
                         <div className="space-y-3">
                             <div className="flex justify-between items-start">

@@ -38,7 +38,7 @@ const TopRatedSection = () => {
     ]
     return (
         <section className="w-full bg-[#0b0f17] text-white py-12 px-6">
-            <div className="w-9/12 mx-auto">
+            <div className="w-11/12 mx-auto lg:w-9/12">
 
                 {/* Header Section */}
                 <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-8 gap-4">

@@ -1,7 +1,7 @@
-const  ViewsCard= [
-    // 1. Clean Minimalist Mac Desk (@alex_dev)
+const ViewsCard = [
+    // 1. 
     {
-        id: "clean-minimalist-mac-desk",
+        id: "clean-minimalist-mac",
         title: "Clean Minimalist Mac Desk",
         categories: ["Minimalist", "Mac Only"],
         author: {
@@ -34,9 +34,9 @@ const  ViewsCard= [
         ]
     },
 
-    // 2. Neon Night Shift Station (@kira.codes)
+    // 2. 
     {
-        id: "neon-night-shift-station",
+        id: "neon-night-shift",
         title: "Neon Night Shift Station",
         categories: ["Cyberpunk"],
         author: {
@@ -69,9 +69,9 @@ const  ViewsCard= [
         ]
     },
 
-    // 3. Dual Dell Brick-Wall Loft (@marco_rs) - Current Screen Page
+    // 3. 
     {
-        id: "dual-dell-brick-wall-loft",
+        id: "dual-dell-brick",
         title: "Dual Dell Brick-Wall Loft",
         categories: ["Dual-Monitor"],
         author: {
@@ -102,6 +102,108 @@ const  ViewsCard= [
             "I spent two years at a cluttered dual-monitor desk before admitting most of my day happens in one editor and one browser. Moving to a single 32\" 4K panel on an arm freed up the whole surface, and the MacBook sits closed in a vertical stand — one Thunderbolt cable carries power, display and the keyboard hub.",
             "The bamboo Jarvis lets me switch to standing after lunch, which has done more for my back than any chair. The Q1 Pro with Banana switches is quiet enough for calls, and everything under the desk lives in a single cable tray so the top stays clear. Total cost was about what I'd have spent on a second monitor I didn't need."
         ]
-    }
+    },
+    // 4.
+    {
+        id: "walnut-garden-office",
+        title: "Walnut Garden Office",
+        categories: ["Minimalist", "Mac Only"],
+        author: {
+            name: "PR",
+            username: "@priya_ships",
+            role: "Senior frontend engineer",
+            location: "Berlin",
+            avatarBg: "emerald"
+        },
+        upvotes: 842,
+        images: [
+            "https://cdn.magicpatterns.com/patterns/generated-images/a63e3e05-51c6-4599-bcb8-bf8a3b06f55f.jpg",
+            "https://cdn.magicpatterns.com/patterns/generated-images/d8678ddb-38ff-40fd-a886-85ecdfdd12ae.jpg",
+            "https://cdn.magicpatterns.com/patterns/generated-images/2a50bb52-dc93-4d51-a5c3-88c761662633.jpg"
+        ],
+        specs: {
+            fileName: "specs.json",
+            items: [
+                { label: "Machine", value: 'MacBook Pro 16" (M1 Max)' },
+                { label: "Display", value: 'Dell UltraSharp 32" 4K' },
+                { label: "Keyboard", value: "Keychron Q1 Pro (Banana Switches)" },
+                { label: "Mouse", value: "Logitech MX Master 3S" },
+                { label: "Desk", value: "Jarvis Bamboo Standing Desk" }
+            ],
+            tags: ["MacBook Air M2", "Kinesis Freestyle"]
+        },
+        about: [
+            "I spent two years at a cluttered dual-monitor desk before admitting most of my day happens in one editor and one browser. Moving to a single 32\" 4K panel on an arm freed up the whole surface, and the MacBook sits closed in a vertical stand — one Thunderbolt cable carries power, display and the keyboard hub.",
+            "The bamboo Jarvis lets me switch to standing after lunch, which has done more for my back than any chair. The Q1 Pro with Banana switches is quiet enough for calls, and everything under the desk lives in a single cable tray so the top stays clear. Total cost was about what I'd have spent on a second monitor I didn't need."
+        ]
+    },
+    // 5. 
+    {
+        id: "pegboard-podcast-corner",
+        title: "Pegboard Podcast Corner",
+        categories: ["Minimalist"],
+        author: {
+            name: "DE",
+            username: "@devon.fm",
+            role: "Senior frontend engineer",
+            location: "Berlin",
+            avatarBg: "emerald"
+        },
+        upvotes: 731,
+        images: [
+            "https://cdn.magicpatterns.com/patterns/generated-images/99c94b56-ef8d-482d-9cf8-2b88678a8a8f.jpg",
+            "https://cdn.magicpatterns.com/patterns/generated-images/d8678ddb-38ff-40fd-a886-85ecdfdd12ae.jpg",
+            "https://cdn.magicpatterns.com/patterns/generated-images/2a50bb52-dc93-4d51-a5c3-88c761662633.jpg"
+        ],
+        specs: {
+            fileName: "specs.json",
+            items: [
+                { label: "Machine", value: 'MacBook Pro 16" (M1 Max)' },
+                { label: "Display", value: 'Dell UltraSharp 32" 4K' },
+                { label: "Keyboard", value: "Keychron Q1 Pro (Banana Switches)" },
+                { label: "Mouse", value: "Logitech MX Master 3S" },
+                { label: "Desk", value: "Jarvis Bamboo Standing Desk" }
+            ],
+            tags: ["Shure SM7B", "Tofu60"]
+        },
+        about: [
+            "I spent two years at a cluttered dual-monitor desk before admitting most of my day happens in one editor and one browser. Moving to a single 32\" 4K panel on an arm freed up the whole surface, and the MacBook sits closed in a vertical stand — one Thunderbolt cable carries power, display and the keyboard hub.",
+            "The bamboo Jarvis lets me switch to standing after lunch, which has done more for my back than any chair. The Q1 Pro with Banana switches is quiet enough for calls, and everything under the desk lives in a single cable tray so the top stays clear. Total cost was about what I'd have spent on a second monitor I didn't need."
+        ]
+    },
+    // 6.
+    {
+        id: "tiling-wm-ultrawide",
+        title: "Tiling WM Ultrawide Rig",
+        categories: ["Minimalist"],
+        author: {
+            name: "NI",
+            username: "@nixos_nate",
+            role: "Senior frontend engineer",
+            location: "Berlin",
+            avatarBg: "emerald"
+        },
+        upvotes: 688,
+        images: [
+            "https://cdn.magicpatterns.com/patterns/generated-images/ca9d3edd-717b-40e9-a481-b3f38375f0db.jpg",
+            "https://cdn.magicpatterns.com/patterns/generated-images/d8678ddb-38ff-40fd-a886-85ecdfdd12ae.jpg",
+            "https://cdn.magicpatterns.com/patterns/generated-images/2a50bb52-dc93-4d51-a5c3-88c761662633.jpg"
+        ],
+        specs: {
+            fileName: "specs.json",
+            items: [
+                { label: "Machine", value: 'MacBook Pro 16" (M1 Max)' },
+                { label: "Display", value: 'Dell UltraSharp 32" 4K' },
+                { label: "Keyboard", value: "Keychron Q1 Pro (Banana Switches)" },
+                { label: "Mouse", value: "Logitech MX Master 3S" },
+                { label: "Desk", value: "Jarvis Bamboo Standing Desk" }
+            ],
+            tags: ["Dell U3423WE", "Kinesis 360"]
+        },
+        about: [
+            "I spent two years at a cluttered dual-monitor desk before admitting most of my day happens in one editor and one browser. Moving to a single 32\" 4K panel on an arm freed up the whole surface, and the MacBook sits closed in a vertical stand — one Thunderbolt cable carries power, display and the keyboard hub.",
+            "The bamboo Jarvis lets me switch to standing after lunch, which has done more for my back than any chair. The Q1 Pro with Banana switches is quiet enough for calls, and everything under the desk lives in a single cable tray so the top stays clear. Total cost was about what I'd have spent on a second monitor I didn't need."
+        ]
+    },
 ];
 export default ViewsCard;

@@ -3,7 +3,7 @@ import { NavLink, Link } from "react-router";
 const Navbar = () => {
     return (
         <nav className="fixed top-0 left-0 right-0 z-50 h-18 w-full bg-[#0b0f17] border-b border-gray-800/60 py-3.5 px-6">
-            <div className="w-9/12 max-w-7xl mx-auto flex items-center justify-between">
+            <div className="w-11/12 mx-auto flex items-center justify-between lg:w-9/12">
 
                 {/* Left: Brand / Logo */}
                 <div className="flex items-center gap-2">
@@ -14,7 +14,7 @@ const Navbar = () => {
                 </div>
 
                 {/* Center: Navigation Links */}
-                <div className="hidden md:flex items-center gap-8">
+                <div className="hidden md:flex items-center gap-5 sm:flex">
                     <NavLink
                         to="/"
                         className="text-gray-300 text-sm font-medium transition-colors duration-200 [&.active]:text-emerald-400 [&.active]:font-semibold hover:text-white"
@@ -44,7 +44,7 @@ const Navbar = () => {
                     </NavLink>
                     <Link
                         to="/submit"
-                        className="bg-gray-800 hover:bg-gray-700 text-white font-medium px-4 py-2 rounded-lg border border-gray-700 transitionbg-gray-800/80 hover:bg-gray-800 text-white hover:text-emerald-400 font-medium px-4 py-2 rounded-lg border border-gray-700 hover:border-emerald-500/50 transition duration-200 ease-in-out"
+                        className="bg-gray-800 hover:bg-gray-700 text-white font-medium px-2 py-2 rounded-lg border border-gray-700 transitionbg-gray-800/80 hover:bg-gray-800 text-white hover:text-emerald-400 font-medium px-2 py-2 rounded-lg border border-gray-700 hover:border-emerald-500/50 transition duration-200 ease-in-out"
                     >
                         Submit Setup
                     </Link>
