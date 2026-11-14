@@ -22,7 +22,7 @@ const HeroSection = () => {
                     </Link>
 
                     <Link
-                        to="/gear-guide"
+                        to="/gearguide"
                         className="text-gray-300 hover:text-white font-medium px-4 py-3 transition duration-200"
                     >
                         Read the Gear Guide

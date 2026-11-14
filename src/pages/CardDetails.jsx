@@ -19,7 +19,7 @@ const CardDetails = () => {
     }
 
     return (
-        <div className="bg-[#0b0f17] text-white px-4 mt-13 py-20 grid gap-10">
+        <div className="bg-[#0b0f17] text-white px-4 mt-8 py-20 grid gap-10">
             <div className="w-11/12 mx-auto lg:w-9/12">
                 <NavLink
                     to={`/setups`}
@@ -34,7 +34,7 @@ const CardDetails = () => {
             <div className="w-11/12 mx-auto flex flex-col lg:flex-row gap-5 border-b pb-10 border-base-300  lg:w-9/12">
 
                 {/* Photos */}
-                <div className="w-full lg:w-7/12">
+                <div className="w-full lg:w-7/12 border-b border-gray-700 pb-6">
 
                     {/* Big Photo */}
                     <div>
@@ -62,14 +62,14 @@ const CardDetails = () => {
                 </div>
 
                 {/* Info */}
-                <div className="w-full lg:w-5/12 grid gap-5">
+                <div className="w-full lg:w-5/12 grid gap-5 border-b border-gray-700 pb-6">
 
                     {/* Categories */}
-                    <ul className="flex gap-3 flex-wrap">
+                    <ul className="flex gap-3 flex-wrap ">
                         {singleView.categories.map((category, index) => (
                             <li
                                 key={index}
-                                className="px-3 py-1 text-sm rounded-full bg-white/10"
+                                className="px-3 py-1 text-sm rounded-md text-[12px] font-medium transition duration-200 border bg-emerald-500/10 text-emerald-400 border-emerald-500/50"
                             >
                                 {category}
                             </li>
@@ -77,15 +77,15 @@ const CardDetails = () => {
                     </ul>
 
                     {/* Title */}
-                    <h1 className="text-3xl font-bold">
+                    <h1 className="text-3xl font-bold border-b border-gray-700 pb-3">
                         {singleView.title}
                     </h1>
 
                     {/* User */}
-                    <div className="flex flex-wrap items-center gap-4">
+                    <div className="flex flex-wrap items-center gap-4 border-b border-gray-700 pb-5">
 
                         {/* Avatar */}
-                        <div className="w-12 h-12 rounded-full bg-emerald-500 flex items-center justify-center text-xl font-semibold">
+                        <div className="w-12 h-12 rounded-md transition duration-200 border bg-[#131b29] text-green-300 border-gray-800 hover:text-green-500 hover:border-gray-700 flex items-center justify-center text-xl font-semibold">
                             {singleView.author.name}
                         </div>
 
@@ -101,13 +101,13 @@ const CardDetails = () => {
                         </div>
 
                         {/* Votes */}
-                        <h1 className="font-bold">
-                            {singleView.upvotes.toLocaleString()}
+                        <h1 className="font-bold transition duration-200 border bg-[#131b29] text-gray-400 border-gray-800 hover:text-gray-200 hover:border-gray-700 px-3 py-2 rounded-xl">
+                            <span className="text-lg text-green-500">↑</span> {singleView.upvotes.toLocaleString()}
                         </h1>
 
                         {/* Save Icon */}
-                        <div>
-                            <i class="fa-solid fa-bookmark"></i>
+                        <div className="transition duration-200 border bg-[#131b29] text-gray-400 border-gray-800 hover:text-gray-200 hover:border-gray-700 px-3 py-2 rounded-xl">
+                            <i class="fa-regular fa-bookmark"></i>
                         </div>
 
                     </div>
@@ -118,7 +118,7 @@ const CardDetails = () => {
                             {singleView.specs.fileName}
                         </h1>
 
-                        <div className="overflow-x-auto">
+                        <div className="overflow-x-auto border border-gray-700 rounded bg-[#131b29]">
                             <table className="table text-white">
                                 <tbody>
 
@@ -128,7 +128,7 @@ const CardDetails = () => {
                                                 {item.label}
                                             </td>
 
-                                            <th className="text-right">
+                                            <th className="text-gray-400">
                                                 {item.value}
                                             </th>
                                         </tr>
@@ -145,7 +145,7 @@ const CardDetails = () => {
                             {singleView.specs.tags.map((tag, index) => (
                                 <li
                                     key={index}
-                                    className="px-3 py-1 rounded-md bg-white/10 text-sm"
+                                    className="px-3 py-1 border border-gray-700 rounded bg-[#131b29] text-[10px]"
                                 >
                                     {tag}
                                 </li>
